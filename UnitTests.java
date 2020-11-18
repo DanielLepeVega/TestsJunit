@@ -87,6 +87,9 @@ public class UnitTests {
         assertEquals(0, testList.size());
     }
 
+
+    // ---------------- We need to add Items -----------------
+
     @Test
     public void addItemsMultipleSize() {
         List<Integer> testList = new ArrayList<>();
@@ -96,8 +99,6 @@ public class UnitTests {
         testList.add(2);
         assertEquals(3,testList.size());
     }
-
-    // ---------------- We need to add Items -----------------
 
     @Test
     public void addMultipleItems() {
@@ -122,9 +123,7 @@ public class UnitTests {
         assertTrue(testList.contains(0));
     }
 
-    // -------------------------------------------------------
     // ---- We need to be able to check if an item exists ----
-    // -------------------------------------------------------
     @Test
     public void itemDoesNotExist() {
         List<Integer> testList = new ArrayList<>();
@@ -146,9 +145,7 @@ public class UnitTests {
         testList.contains(0);
     }
 
-    // -------------------------------------------------------
     // ---------- We need to get elements by index -----------
-    // -------------------------------------------------------
     @Test
     public void getElementByIndex() {
         List<Integer> testList = new ArrayList<>();
@@ -158,7 +155,7 @@ public class UnitTests {
     }
 
     @Test (expected = IndexOutOfBoundsException.class)
-    public void indexOutOfBoundsEx() {
+    public void getElementbyIndexOutOfBoundsEx() {
         List<Integer> testList = new ArrayList<>();
         testList.add(0);
         testList.add(1);
@@ -232,6 +229,14 @@ public class UnitTests {
         testList.add(1);
         testList.add(2);
         testList.remove(4);
+    }
+
+    @Test
+    public void removeItemIndexNull(){
+        List<Integer> testList = new ArrayList<>();
+        testList.add(null);
+        testList.remove(null);
+        assertEquals(0,testList.size());
     }
 
 }
